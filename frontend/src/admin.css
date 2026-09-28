@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+/* Guaranteed base layout styles so it never looks broken */
+body {
+  background-color: #030712 !important;
+  color: #f8fafc !important;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom Admin Theme Classes */
+.admin-card {
+  background-color: #55565a;
+  border: 1px solid #1e293b;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+.admin-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 1rem;
+  border-radius: 0.75rem;
+  color: #94a3b8;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.admin-nav-item:hover, .admin-nav-item.active {
+  background-color: #1e293b;
+  color: #ffb703;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.admin-table th {
+  background-color: #0f172a;
+  color: #94a3b8;
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #1e293b;
+}
+
+.admin-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #1e293b;
+  color: #e2e8f0;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+/* ============================================================
+   Theme variables (light/dark) for the admin dashboard.
+   ============================================================ */
+:root {
+  --admin-bg: #dfe1e9;
+  --admin-surface: #09090a;
+  --admin-card-bg: #01040a;
+  --admin-border: #1e293b;
+  --admin-text-main: #f8fafc;
+  --admin-text-muted: #94a3b8;
+  --admin-accent: #ffb703;
+  --admin-danger: #f87171;
+}
+
+[data-theme='light'] {
+  --admin-bg: #f8fafc;
+  --admin-surface: #ffffff;
+  --admin-card-bg: #ffffff;
+  --admin-border: #e2e8f0;
+  --admin-text-main: #0f172a;
+  --admin-text-muted: #475569;
+}
+
+.admin-shell { background-color: var(--admin-bg); color: var(--admin-text-main); }
+.admin-sidebar { background-color: var(--admin-surface); border-color: var(--admin-border); }
+.admin-header { background-color: var(--admin-surface); border-color: var(--admin-border); }
+
+.admin-card {
+  background-color: var(--admin-card-bg);
+  border: 1px solid var(--admin-border);
+}
+
+.admin-nav-item { color: var(--admin-text-muted); }
+.admin-nav-item:hover, .admin-nav-item.active {
+  background-color: var(--admin-border);
+  color: var(--admin-accent);
+}
+
+.admin-unread-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 9999px;
+  background-color: var(--admin-danger);
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  margin-left: auto;
+}
+
+/* ============================================================
+   Mobile drawer nav
+   ============================================================ */
+.admin-mobile-topbar {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .admin-sidebar {
+    position: fixed;
+    inset: 0 35% 0 0;
+    z-index: 200;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    overflow-y: auto;
+  }
+
+  .admin-sidebar.drawer-open {
+    transform: translateX(0);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+  }
+
+  .admin-drawer-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 190;
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  .admin-mobile-topbar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+}

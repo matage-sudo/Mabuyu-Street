@@ -1,0 +1,101 @@
+<svg id="mabuyuLogoSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" class="w-full h-full filter drop-shadow-2xl">
+          <defs>
+            <!-- Brush stroke filter effect for organic texture -->
+            <filter id="brushTexture" x="-20%" y="-20%" width="140%" height="140%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" result="noise"/>
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="3.5" xChannelSelector="R" yChannelSelector="G"/>
+            </filter>
+
+            <!-- Heartbeat Glow Filter -->
+            <filter id="glowEffect" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+
+            <!-- Bright Red Gradient for Text -->
+            <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ff2a2a"/>
+              <stop offset="100%" stop-color="#dc2626"/>
+            </linearGradient>
+
+            <style>
+              .brand-text-red {
+                font-family: 'Permanent Marker', 'Impact', 'Arial Black', sans-serif;
+                font-weight: 900;
+                text-anchor: middle;
+                fill: url(#redGradient);
+              }
+              .pulse-line {
+                stroke: #eab308;
+                stroke-width: 12;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                fill: none;
+                transition: stroke 0.3s ease;
+              }
+              .pulse-heart {
+                fill: #eab308;
+                transition: fill 0.3s ease;
+              }
+            </style>
+          </defs>
+
+          <!-- SVG Background Canvas -->
+          <rect id="svgBgRect" width="1000" height="1200" fill="#000000" rx="24"/>
+
+          <!-- Textured Frame & Typography Group -->
+          <g transform="rotate(-6 500 550)">
+            
+            <!-- TOP LINE: RED MABUYU -->
+            <g transform="translate(500, 420) skewX(-12) scale(1, 1.15)">
+              
+              <!-- Brush stroke shadow backing -->
+              <text class="brand-text-red" x="-8" y="8" font-size="205" fill="#450a0a" opacity="0.9" filter="url(#brushTexture)" letter-spacing="2">MABUYU</text>
+              <text class="brand-text-red" x="8" y="-8" font-size="205" fill="#fca5a5" opacity="0.4" filter="url(#brushTexture)" letter-spacing="2">MABUYU</text>
+              
+              <!-- Primary MABUYU Red Vector Text -->
+              <text class="brand-text-red" x="0" y="0" font-size="200" letter-spacing="3" filter="url(#brushTexture)">MABUYU</text>
+              
+              <!-- Paint Specks & Distresses in Red/White -->
+              <path d="M-380,-120 L-370,-115 L-375,-105 Z" fill="#ef4444" opacity="0.8"/>
+              <path d="M380,-50 L395,-45 L385,-35 Z" fill="#ef4444" opacity="0.9"/>
+              <circle cx="-320" cy="-140" r="5" fill="#fca5a5" opacity="0.7"/>
+              <circle cx="340" cy="80" r="6" fill="#ef4444" opacity="0.6"/>
+            </g>
+
+            <!-- BOTTOM LINE: RED STREET -->
+            <g transform="translate(500, 680) skewX(-12) scale(1, 1.18)">
+              <!-- Shadow backing -->
+              <text class="brand-text-red" x="-8" y="8" font-size="225" fill="#450a0a" opacity="0.9" filter="url(#brushTexture)" letter-spacing="4">STREET</text>
+              <text class="brand-text-red" x="8" y="-8" font-size="225" fill="#fca5a5" opacity="0.4" filter="url(#brushTexture)" letter-spacing="4">STREET</text>
+              
+              <!-- Primary STREET Red Vector Text -->
+              <text class="brand-text-red" x="0" y="0" font-size="220" letter-spacing="4" filter="url(#brushTexture)">STREET</text>
+
+              <!-- Paint Specks -->
+              <path d="M-390,40 L-370,48 L-385,58 Z" fill="#ef4444" opacity="0.8"/>
+              <circle cx="370" cy="-100" r="7" fill="#fca5a5" opacity="0.7"/>
+              <circle cx="-340" cy="80" r="4" fill="#ef4444" opacity="0.8"/>
+            </g>
+
+            <!-- BELOW TEXT: HEARTBEAT PULSE LINE WITH MINI HEART -->
+            <g transform="translate(500, 840) skewX(-12)" filter="url(#glowEffect)">
+              
+              <!-- ECG Heartbeat Line -->
+              <path class="pulse-line" d="&#10;                M -380 0 &#10;                L -220 0 &#10;                L -190 -35 &#10;                L -160 30 &#10;                L -130 -80 &#10;                L -90 90 &#10;                L -50 -20 &#10;                L -30 0 &#10;                L 0 0 &#10;                L 30 0 &#10;                L 50 -20 &#10;                L 90 90 &#10;                L 130 -80 &#10;                L 160 30 &#10;                L 190 -35 &#10;                L 220 0 &#10;                L 380 0&#10;              "/>
+
+              <!-- Mini Heart Icon Integrated at Center Peak -->
+              <g transform="translate(0, -10) scale(1.3)">
+                <path class="pulse-heart" d="&#10;                  M 0 -15 &#10;                  C -12 -30, -32 -10, 0 18 &#10;                  C 32 -10, 12 -30, 0 -15 Z&#10;                "/>
+              </g>
+
+              <!-- Accent Dots at Terminals -->
+              <circle cx="-380" cy="0" r="7" class="pulse-heart"/>
+              <circle cx="380" cy="0" r="7" class="pulse-heart"/>
+            </g>
+
+          </g>
+        </svg>
