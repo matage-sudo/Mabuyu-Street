@@ -16,7 +16,7 @@ import {
 
 import logoImg from './assets/Gemini_Generated_Image_wt6ac1wt6ac1wt6a.jpeg';
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+const API_BASE = import.meta.env.VITE_API_BASE_URL ?? '';
 
 function formatMoney(value) {
   return `KSh ${Number(value || 0).toLocaleString()}`;

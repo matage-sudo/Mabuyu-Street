@@ -2,7 +2,7 @@
 import { ShieldCheck, Lock, User } from 'lucide-react';
 import logoImg from './assets/Gemini_Generated_Image_wt6ac1wt6ac1wt6a.jpeg';
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+const API_BASE = import.meta.env.VITE_API_BASE_URL ?? '';
 
 export default function AdminLogin({ onSuccess }) {
   const [username, setUsername] = useState('');

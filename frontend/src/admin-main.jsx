@@ -4,7 +4,7 @@ import './admin.css'
 import AdminDashboard from './AdminDashboard.jsx'
 import AdminLogin from './AdminLogin.jsx'
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+const API_BASE = import.meta.env.VITE_API_BASE_URL ?? '';
 
 function AdminGate() {
   const [status, setStatus] = useState('checking');
