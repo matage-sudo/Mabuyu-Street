@@ -1896,7 +1896,7 @@ export default function App() {
                     className={`loyalty-tier-tile ${currentUser && tier.id === loyaltyTier.id ? 'current' : ''}`}
                   >
                     <span className="feature-icon"><Award size={18} /></span>
-                    <h4>{loyaltyTier.name}</h4>
+                    <h3>{loyaltyTier.name}</h3>
                     <span className="tier-threshold-text">
                       {loyaltyTier.threshold === 0
                         ? 'Start earning from your first order'
@@ -2439,7 +2439,6 @@ export default function App() {
                   <option value={1}>1 — Poor</option>
                 </select>
               </label>
-f
               <label className="block">
                 <span className="text-xs uppercase tracking-wide text-slate-800 dark:text-slate-200 font-bold block mb-1">Comment</span>
                 <textarea
