@@ -2794,7 +2794,7 @@ html[data-theme='dark'] main {
   .products-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
   .card-info { padding: 12px; }
   .card-description {
-    .card-description {
+    /* card-description styles */
   min-height: 0;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -2846,3 +2846,34 @@ html[data-theme='dark'] main {
 }
 .hero-dot { position: relative; }
 .hero-dot::after { content: ''; position: absolute; inset: -12px -5px; }  /* bigger hit area, same look */
+
+
+/* ================================================================
+   FLOATING WHATSAPP BUTTON
+   ================================================================ */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 84px;
+  right: 18px;
+  z-index: 950;
+  width: 56px;
+  height: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #25d366;
+  color: #ffffff;
+  box-shadow: 0 10px 26px rgba(37, 211, 102, 0.45);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.floating-whatsapp:hover {
+  transform: scale(1.08);
+  box-shadow: 0 14px 34px rgba(37, 211, 102, 0.55);
+}
+@media (min-width: 641px) {
+  .floating-whatsapp {
+    bottom: 26px;
+    right: 26px;
+  }
+}

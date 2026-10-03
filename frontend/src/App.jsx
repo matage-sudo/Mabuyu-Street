@@ -342,7 +342,7 @@ export default function App() {
 
   const loadProfile = useCallback(async (userId, accessToken) => {
     try {
-      const res = await fetch(`${API_BASE}/customers/me?userId=${encodeURIComponent(userId)}`, {
+      const res = await fetch(`${API_BASE}/customers/me`, {
         headers: accessToken ? { Authorization: `Bearer ${accessToken}` } : {},
       });
       if (!res.ok) throw new Error('Could not load profile');
@@ -411,7 +411,7 @@ export default function App() {
     if (!currentUser?.id) return;
     setMyOrdersLoading(true);
     try {
-      const res = await fetch(`${API_BASE}/customers/me/orders?customerId=${encodeURIComponent(currentUser.id)}`, {
+      const res = await fetch(`${API_BASE}/customers/me/orders`, {
         headers: session?.access_token ? { Authorization: `Bearer ${session.access_token}` } : {},
       });
       if (!res.ok) throw new Error('Could not load orders');
@@ -2461,6 +2461,16 @@ export default function App() {
           </div>
         </div>
       )}
-    </div>
+
+
+      <a
+        href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi Mabuyu Street! I'd like to place an order.")}`}
+        target="_blank"
+        rel="noreferrer"
+        className="floating-whatsapp"
+        aria-label="Chat with us on WhatsApp"
+      >
+        <MessageCircle size={26} />
+      </a>    </div>
   );
 }
